@@ -39,3 +39,8 @@
 
 # debug information files
 *.dwo
+
+# QtCreator files
+*.user
+.qtcreator
+build
