@@ -44,3 +44,6 @@
 *.user
 .qtcreator
 build
+
+#Visual Studio Code files
+.vscodes
