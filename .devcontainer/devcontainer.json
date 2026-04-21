@@ -1,4 +1,31 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/cpp",
-  "features": {}
+  "name": "Qt C++ Dev Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.makefile-tools",
+        "twxs.cmake"
+      ],
+      "settings": {
+        "cmake.configureOnOpen": true,
+        "cmake.buildBeforeRun": true,
+        "C_Cpp.default.compilerPath": "/usr/bin/g++"
+      }
+    }
+  },
+  "forwardPorts": [6080],
+  "postStartCommand": "Xvfb :99 -screen 0 1280x1024x24 &",
+  "remoteEnv": {
+    "DISPLAY": ":99"
+  }
 }
